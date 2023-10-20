@@ -2,6 +2,8 @@
 
 namespace Synsei\Router;
 
+use Psr\Container\ContainerInterface;
+
 class Router
 {
     private const GET = "GET";
@@ -45,5 +47,11 @@ class Router
             }
         }
         return null;
+    }
+
+    public static function UseRoute(Route $route, ContainerInterface $diContainer): void
+    {
+        $controller = $diContainer->get($route->controller);
+        $controller->{$route->action}();
     }
 }
