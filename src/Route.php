@@ -1,21 +1,11 @@
 <?php
 
-namespace Libs\Router;
+namespace Synsei\Router;
 
-//enum HttpMethod
-//{
-//    case GET;
-//    case POST;
-//    case PUT;
-//    case DELETE;
-//}
 class Route
 {
-    public string $controller;
-    public string $action;
-    public function __construct($controller, $action)
-    {
-        $this->controller = $controller;
-        $this->action = $action;
-    }
+    public function __construct(
+	    public readonly string $controller, 
+	    public readonly string $action
+    ) { }
 }
