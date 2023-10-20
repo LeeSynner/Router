@@ -41,9 +41,9 @@ class Router
         $path = trim(explode("?", $path)[0], "/");
         foreach (self::$listOfRoutes[$method] as $key => $route) {
             if ($path == $key) {
-		return $route;
+                return $route;
             }
         }
-	return null;
+        return null;
     }
 }
